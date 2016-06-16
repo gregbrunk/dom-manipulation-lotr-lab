@@ -28,8 +28,18 @@ function makeMiddleEarth() {
   // inside, add each land as an article tag
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
-}
+  var middle_earth = document.createElement('section');
+  middle_earth.setAttribute('id', 'middle-earth');
+  for (var i =0; i < lands.length; i++) {
+    var land = document.createElement('article');
+    var heading = document.createElement('h1');
+    heading.textContent = lands[i];
+    land.appendChild(heading);
+    middle_earth.appendChild(land);
+  }
+  document.body.appendChild(middle_earth);
 
+}
 makeMiddleEarth();
 
 
@@ -38,8 +48,16 @@ makeMiddleEarth();
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // give each hobbit a class of hobbit
+  var hobbitList = document.createElement('ul');
+  for (var i =0; i < hobbits.length; i++) {
+    var listItem = document.createElement('li');
+    listItem.textContent = hobbits[i];
+    listItem.setAttribute("class", "hobbit");
+    hobbitList.appendChild(listItem);
+  }
+  document.querySelector('article').appendChild(hobbitList);
 }
-
+makeHobbits();
 
 // Part 3
 
@@ -48,26 +66,40 @@ function keepItSecretKeepItSafe() {
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   // add the ring as a child of Frodo
+  var ring = document.createElement('div');
+  ring.setAttribute('id', 'the-ring');
+  ring.setAttribute('class', 'magic-imbued-jewelry');
+  ring.addEventListener("click", nazgulScreech);
+  document.querySelector('li').appendChild(ring);
 }
+
+keepItSecretKeepItSafe();
 
 
 // Part 4
-
 
 function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
+  var aside = document.createElement('aside');
+  var listOfBuddies = document.createElement('ul');
+  for (var i =0; i < buddies.length; i++) {
+    var buddyItem = document.createElement('li');
+    buddyItem.textContent = buddies[i];
+    listOfBuddies.appendChild(buddyItem);
+  }
+  aside.appendChild(listOfBuddies);
+  document.querySelectorAll('h1')[1].appendChild(aside);
 }
-
+makeBuddies();
 
 // Part 5
-
-
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+  document.querySelectorAll('aside ul li')[3].textContent = "Aragorn"; 
 }
-
+beautifulStranger();
 
 // Part 6
 
