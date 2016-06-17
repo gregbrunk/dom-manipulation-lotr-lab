@@ -22,7 +22,6 @@ var body = document.querySelector('body');
 
 // Part 1
 
-
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
   // inside, add each land as an article tag
@@ -44,6 +43,9 @@ makeMiddleEarth();
 
 
 // Part 2
+var the_shire = body.querySelectorAll('article')[0];
+var rivendell = body.querySelectorAll('article')[1];
+var mordor = body.querySelectorAll('article')[2];
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
@@ -55,12 +57,12 @@ function makeHobbits() {
     listItem.setAttribute("class", "hobbit");
     hobbitList.appendChild(listItem);
   }
-  document.querySelector('article').appendChild(hobbitList);
+  the_shire.appendChild(hobbitList);
 }
 makeHobbits();
 
 // Part 3
-
+var frodo = body.querySelectorAll('li')[0];
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
@@ -70,11 +72,10 @@ function keepItSecretKeepItSafe() {
   ring.setAttribute('id', 'the-ring');
   ring.setAttribute('class', 'magic-imbued-jewelry');
   ring.addEventListener("click", nazgulScreech);
-  document.querySelector('li').appendChild(ring);
+  frodo.appendChild(ring);
 }
 
 keepItSecretKeepItSafe();
-
 
 // Part 4
 
@@ -89,7 +90,7 @@ function makeBuddies() {
     buddyItem.textContent = buddies[i];
     listOfBuddies.appendChild(buddyItem);
   }
-  aside.appendChild(listOfBuddies);
+  rivendell.appendChild(listOfBuddies);
   document.querySelectorAll('h1')[1].appendChild(aside);
 }
 makeBuddies();
@@ -97,7 +98,7 @@ makeBuddies();
 // Part 5
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-  document.querySelectorAll('aside ul li')[3].textContent = "Aragorn"; 
+  rivendell.querySelectorAll('li')[3].textContent = "Aragorn"; 
 }
 beautifulStranger();
 
