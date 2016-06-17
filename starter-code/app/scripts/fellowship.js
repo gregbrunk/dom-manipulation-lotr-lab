@@ -74,7 +74,6 @@ function keepItSecretKeepItSafe() {
   ring.addEventListener("click", nazgulScreech);
   frodo.appendChild(ring);
 }
-
 keepItSecretKeepItSafe();
 
 // Part 4
@@ -90,8 +89,8 @@ function makeBuddies() {
     buddyItem.textContent = buddies[i];
     listOfBuddies.appendChild(buddyItem);
   }
-  rivendell.appendChild(listOfBuddies);
-  document.querySelectorAll('h1')[1].appendChild(aside);
+  aside.appendChild(listOfBuddies);
+  rivendell.appendChild(aside);
 }
 makeBuddies();
 
@@ -103,29 +102,37 @@ function beautifulStranger() {
 beautifulStranger();
 
 // Part 6
-
+var the_hobbits = document.querySelectorAll('ul')[0];
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+  rivendell.appendChild(the_hobbits);
 }
-
+leaveTheShire();
 
 // Part 7
 
-
+var fellowshipFolk = rivendell.querySelectorAll('li');
+console.log(fellowshipFolk);
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
+  var the_fellowship = document.createElement('div');
+  for (i=0; i < fellowshipFolk.length; i++) {
+    the_fellowship.appendChild(fellowshipFolk[i]);
+    alert(fellowshipFolk[i].textContent + " has joined your party!");
+  }
+  rivendell.appendChild(the_fellowship);
 }
-
+forgeTheFellowShip();
 
 // Part 8
-
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
+  the_fellowship.querySelectorAll()
 }
 
 
