@@ -127,24 +127,27 @@ function forgeTheFellowShip() {
 forgeTheFellowShip();
 
 // Part 8
-
+var gandalf = rivendell.querySelector('li');
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
-  the_fellowship.querySelectorAll()
+  gandalf.textContent = "Gandalf the White";
 }
-
+theBalrog();
 
 // Part 9
-
+var boromir = rivendell.querySelectorAll('li')[4];
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
+  alert('Horn of Gondor has been blown!');
+  boromir.style.textDecoration = 'line-through';
+  boromir.parentNode.removeChild(boromir);
 }
-
+hornOfGondor();
 
 // Part 10
 
